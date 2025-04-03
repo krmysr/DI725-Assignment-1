@@ -30,6 +30,13 @@ from torch.distributed import init_process_group, destroy_process_group
 from model import GPTConfig, GPT
 
 
+import wandb
+import random
+
+wandb.login()
+
+
+
 # -----------------------------------------------------------------------------
 # default config values designed to train a gpt2 (124M) on OpenWebText
 # I/O
@@ -42,9 +49,9 @@ always_save_checkpoint = True # if True, always save a checkpoint after each eva
 init_from = 'scratch' # 'scratch' or 'resume' or 'gpt2*'
 
 # wandb logging
-wandb_log = False # disabled by default
-wandb_project = 'owt'
-wandb_run_name = 'gpt2' # 'run' + str(time.time())
+wandb_log = True # disabled by default
+wandb_project = 'DI725-Assignment1'
+wandb_run_name = 'run' +str(time.time()) #'run' + str(time.time())
 
 # data
 dataset = 'openwebtext'
