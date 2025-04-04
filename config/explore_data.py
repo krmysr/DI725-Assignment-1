@@ -22,8 +22,9 @@ filtered_positive = df_train[df_train['customer_sentiment'] == 'positive']
 filtered_negative = df_train[df_train['customer_sentiment'] == 'negative']
 filtered_neutral = df_train[df_train['customer_sentiment'] == 'neutral']
 
-value_counts_positive = filtered_positive['issue_sub_category'].value_counts()
-value_counts_negative = filtered_negative['issue_sub_category'].value_counts()
+value_counts_positive = filtered_positive['issue_category'].value_counts()
+value_counts_negative = filtered_negative['issue_category'].value_counts()
+value_counts_neutral = filtered_neutral['issue_category'].value_counts()
 
 
 # value_counts_test.plot(kind='bar')
@@ -57,6 +58,10 @@ plt.title('Value counts')
 plt.tight_layout()
 plt.show()
 
+
+#keep the columns for sentiment and customer conversation
+filtered_train = df_train[['customer_sentiment', 'conversation']]
+filtered_test = df_train[['customer_sentiment', 'conversation']]
 
 
 
