@@ -61,7 +61,7 @@ plt.show()
 
 #keep the columns for sentiment and customer conversation
 filtered_train = df_train[['customer_sentiment', 'conversation']]
-filtered_test = df_train[['customer_sentiment', 'conversation']]
+filtered_test = df_test[['customer_sentiment', 'conversation']]
 
 
 
